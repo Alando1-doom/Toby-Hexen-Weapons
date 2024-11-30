@@ -1,0 +1,91 @@
+ACTOR Mana1_Toby : CustomInventory replaces Mana1
+{
+	Game Hexen
+	SpawnID 11
+	Radius 16
+	Height 8
+	+FLOATBOB
+    Inventory.PickupMessage "$TXT_MANA_1"
+    Inventory.PickupSound "ammo/pickup/mana1"
+    States
+    {
+    Spawn:
+        MAN1 A 4 Bright A_SpawnItemEx("AmmoPickupChecker_Mana1", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        MAN1 BCDEFGHI 4 Bright
+        Loop
+    Pickup:
+        TNT1 A 1 A_JumpIfInventory("Mana1", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("Mana1", 15)
+		TNT1 A 1 A_PlaySound("ann/ammo/mana1")
+        Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+    }
+}
+
+
+ACTOR Mana2_Toby : CustomInventory replaces Mana2
+{
+	Game Hexen
+	SpawnID 12
+	Radius 16
+	Height 8
+	+FLOATBOB
+    Inventory.PickupMessage "$TXT_MANA_2"
+    Inventory.PickupSound "ammo/pickup/mana2"
+    States
+    {
+    Spawn:
+        MAN2 A 4 Bright A_SpawnItemEx("AmmoPickupChecker_Mana2", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        MAN2 BCDEFGHI 4 Bright
+        Loop
+    Pickup:
+        TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("Mana2", 15)
+		TNT1 A 1 A_PlaySound("ann/ammo/mana2")
+        Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+    }
+}
+
+
+ACTOR Mana3_Toby : CustomInventory replaces Mana3
+{
+	Game Hexen
+	SpawnID 75
+	Radius 16
+	Height 8
+	+FLOATBOB
+	Inventory.PickupMessage "$TXT_MANA_BOTH"
+	Inventory.PickupSound "ammo/pickup/mana3"
+	States
+	{
+	Spawn:
+		MAN3 A 3 Bright A_SpawnItemEx("AmmoPickupChecker_Mana3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        MAN3 BCDEFGHIJKLMNOP 3 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("Mana2", 200, "ManaCheck1")
+		TNT1 A 1 A_JumpIfInventory("Mana1", 200, "ManaCheck2")
+		TNT1 A 0 A_GiveInventory("Mana1", 20)
+		TNT1 A 0 A_GiveInventory("Mana2", 20)
+		TNT1 A 1 A_PlaySound("ann/ammo/mana3")
+		Stop
+	ManaCheck1: //Check Blue Mana
+		TNT1 A 1 A_JumpIfInventory("Mana1", 200, "NoPickup")
+		TNT1 A 0 A_GiveInventory("Mana1", 20)
+		TNT1 A 1 A_PlaySound("ann/ammo/mana3")
+		Stop
+	ManaCheck2: //Check Green Mana
+		TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
+		TNT1 A 0 A_GiveInventory("Mana2", 20)
+		TNT1 A 1 A_PlaySound("ann/ammo/mana3")
+		Stop
+	NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+	}
+}

@@ -1,0 +1,5 @@
+ACTOR FSwordMissile_Toby : FSwordMissile replaces FSwordMissile
+{
+	+THRUGHOST
+	Decal SwordLightning
+}

@@ -1,0 +1,145 @@
+ACTOR WraithVergeP1_Toby : CustomInventory replaces CWeaponPiece1
+{
+	Game Hexen
+	SpawnID 33
+	-COUNTITEM
+	+FLOATBOB
+	+FANCYPICKUPSOUND
+	Inventory.PickupMessage "$TXT_WRAITHVERGE_PIECE"
+	Inventory.PickupSound "weapons/wraithverge/piece"
+	States
+	{
+	Spawn:
+		WCH1 A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WCH1 A 48 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("CWeaponPiece1_Toby", 1, "NoPickup")
+		TNT1 A 0 A_GiveInventory("CWeaponPiece1_Toby", 1)
+		TNT1 A 0 A_PlaySound("ann/weapons/wraithverge/piece1")
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}
+
+
+ACTOR WraithVergeP2_Toby : CustomInventory replaces CWeaponPiece2
+{
+	Game Hexen
+	SpawnID 34
+	-COUNTITEM
+	+FLOATBOB
+	+FANCYPICKUPSOUND
+	Inventory.PickupMessage "$TXT_WRAITHVERGE_PIECE"
+	Inventory.PickupSound "weapons/wraithverge/piece"
+	States
+	{
+	Spawn:
+		WCH2 A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WCH2 A 48 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("CWeaponPiece2_Toby", 1, "NoPickup")
+		TNT1 A 0 A_GiveInventory("CWeaponPiece2_Toby", 1)
+		TNT1 A 0 A_PlaySound("ann/weapons/wraithverge/piece2")
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}
+
+
+ACTOR WraithVergeP3_Toby : CustomInventory replaces CWeaponPiece3
+{
+	Game Hexen
+	SpawnID 35
+	-COUNTITEM
+	+FLOATBOB
+	+FANCYPICKUPSOUND
+	Inventory.PickupMessage "$TXT_WRAITHVERGE_PIECE"
+	Inventory.PickupSound "weapons/wraithverge/piece"
+	States
+	{
+	Spawn:
+		WCH3 A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WCH3 A 48 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("CWeaponPiece3_Toby", 1, "NoPickup")
+		TNT1 A 0 A_GiveInventory("CWeaponPiece3_Toby", 1)
+		TNT1 A 0 A_PlaySound("ann/weapons/wraithverge/piece3")
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}
+
+
+ACTOR ClericWeaponPiece_Toby : WeaponPiece
+{
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "$TXT_WRAITHVERGE_PIECE"
+	Inventory.ForbiddenTo FighterPlayer, MagePlayer
+	WeaponPiece.Weapon CWeapWraithverge_Toby
+	+FLOATBOB
+}
+
+
+ACTOR CWeaponPiece1_Toby : ClericWeaponPiece_Toby
+{
+	Game Hexen
+	WeaponPiece.Number 1
+	States
+	{
+	Spawn:
+		WCH1 A -1
+		Stop
+	}
+}
+
+
+ACTOR CWeaponPiece2_Toby : ClericWeaponPiece_Toby
+{
+	Game Hexen
+	WeaponPiece.Number 2
+	States
+	{
+	Spawn:
+		WCH2 A -1
+		Stop
+	}
+}
+
+
+ACTOR CWeaponPiece3_Toby : ClericWeaponPiece_Toby
+{
+	Game Hexen
+	WeaponPiece.Number 3
+	States
+	{
+	Spawn:
+		WCH3 A -1
+		Stop
+	}
+}
+
+ACTOR CWeapWraithverge_Toby : CWeapWraithverge 12346
+{
+	Game Hexen
+	Weapon.UpSound "weapons/holyup"
+	Inventory.PickupSound "WeaponBuild"
+	States
+	{
+	Spawn:
+		WVRG AAAA 4 Bright A_RadiusGive("GunChecker_WraithVerge", 96, RGF_PLAYERS, 1)
+		WVRG A 4 Bright A_RadiusGive("GunChecker_WraithVerge", 96, RGF_PLAYERS, 1)
+		WVRG A 0 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WVRG A 4 Bright A_RadiusGive("GunChecker_WraithVerge", 96, RGF_PLAYERS, 1)
+		WVRG AAAA 4 Bright A_RadiusGive("GunChecker_WraithVerge", 96, RGF_PLAYERS, 1)
+		Loop
+	}
+}

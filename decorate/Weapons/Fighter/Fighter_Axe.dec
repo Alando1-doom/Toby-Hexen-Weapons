@@ -1,0 +1,16 @@
+ACTOR FWeapAxe_Toby : FWeapAxe replaces FWeapAxe
+{
+	Game Hexen
+	Weapon.UpSound "weapons/axeup"
+	Inventory.PickupSound "weapons/pickup/axe"
+	States
+	{
+	Spawn:
+		WFAX AAAA 4 A_RadiusGive("GunChecker_Axe", 96, RGF_PLAYERS, 1)
+		WFAX A 4 A_RadiusGive("GunChecker_Axe", 96, RGF_PLAYERS, 1)
+		WFAX A 0 A_SpawnItemEx("AxePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WFAX A 4 A_RadiusGive("GunChecker_Axe", 96, RGF_PLAYERS, 1)
+		WFAX AAAA 4 A_RadiusGive("GunChecker_Axe", 96, RGF_PLAYERS, 1)
+		Loop
+	}
+}

@@ -1,0 +1,4 @@
+GameInfo
+{
+    PlayerClasses = "FighterPlayer_Toby", "ClericPlayer_Toby", "MagePlayer_Toby"
+}

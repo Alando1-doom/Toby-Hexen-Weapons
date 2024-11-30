@@ -1,0 +1,5 @@
+ACTOR MWeapWand_Toby : MWeapWand
+{
+	Game Hexen
+	Weapon.UpSound "weapons/wandup"
+}

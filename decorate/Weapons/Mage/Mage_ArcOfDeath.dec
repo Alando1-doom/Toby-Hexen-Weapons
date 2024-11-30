@@ -1,0 +1,17 @@
+ACTOR MWeapLightning_Toby : MWeapLightning replaces MWeapLightning
+{
+	Game Hexen
+	Weapon.UpSound "weapons/arcup"
+	Inventory.PickupSound "weapons/pickup/arcofdeath"
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		WMLG ABCD 4 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
+		WMLG E 1 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
+		WMLG E 2 Bright A_SpawnItemEx("ArcOfDeathPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WMLG E 1 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
+		WMLG FGH 4 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
+		Loop
+	}
+}

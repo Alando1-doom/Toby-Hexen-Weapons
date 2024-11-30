@@ -1,0 +1,28 @@
+ACTOR ClericPlayer_Toby : ClericPlayer
+{
+	Player.StartItem "CWeapMace_Toby"
+	Player.WeaponSlot 1, CWeapMace_Toby
+	Player.WeaponSlot 2, CWeapStaff_Toby
+	Player.WeaponSlot 3, CWeapFlame_Toby
+	Player.WeaponSlot 4, CWeapWraithverge_Toby
+	Player.ColorRange 146, 163
+	Player.Colorset		0, "Blue",			146, 163,    161
+	Player.ColorsetFile 1, "Red",			"TRANTBL7",  0xB3
+	Player.ColorsetFile 2, "Gold",			"TRANTBL8",  0x8C
+	Player.ColorsetFile 3, "Green",			"TRANTBLA",  0xC9
+	Player.ColorsetFile 4, "Gray",			"TRANTBLB",  0x30
+	Player.ColorsetFile 5, "Brown",			"TRANTBLC",  0x72
+	States
+	{
+	Spawn:
+		CLER A -1
+		Stop
+	See:
+        CLER A 5
+        CLER B 5
+        CLER C 5 
+        CLER D 5
+		Goto Spawn
+	}
+}
+		

@@ -1,0 +1,17 @@
+ACTOR MWeapFrost_Toby : MWeapFrost replaces MWeapFrost
+{
+	Game Hexen
+	Weapon.UpSound "weapons/iceup"
+	Inventory.PickupSound "weapons/pickup/icespell"
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		WMCS ABCA 4 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
+		WMCS B 1 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
+		WMCS B 2 Bright A_SpawnItemEx("IceSpellPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WMCS B 1 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
+		WMCS CABC 4 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
+		Loop
+	}
+}

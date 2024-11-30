@@ -1,0 +1,5 @@
+ACTOR CWeapMace_Toby : CWeapMace
+{
+	Game Hexen
+	Weapon.UpSound "weapons/maceup"
+}

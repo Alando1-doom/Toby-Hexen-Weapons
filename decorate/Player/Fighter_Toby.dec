@@ -1,0 +1,27 @@
+ACTOR FighterPlayer_Toby : FighterPlayer
+{
+	Player.StartItem "FWeapFist_Toby"
+	Player.WeaponSlot 1, FWeapFist_Toby
+	Player.WeaponSlot 2, FWeapAxe_Toby
+	Player.WeaponSlot 3, FWeapHammer_Toby
+	Player.WeaponSlot 4, FWeapQuietus_Toby
+	Player.ColorRange 246, 254
+	Player.Colorset		0, "Gold",			246, 254,    253
+	Player.ColorsetFile 1, "Red",			"TRANTBL0",  0xAC
+	Player.ColorsetFile 2, "Blue",			"TRANTBL1",  0x9D
+	Player.ColorsetFile 3, "Green",			"TRANTBL3",  0xC8
+	Player.ColorsetFile 4, "Gray",			"TRANTBL4",  0x2D
+	Player.ColorsetFile 5, "Brown",			"TRANTBL5",  0x6F
+	States
+	{
+	Spawn:
+		PLAY A -1
+		Stop
+	See:
+        PLAY A 5
+        PLAY B 5
+        PLAY C 5 
+        PLAY D 5
+		Goto Spawn
+	}
+}

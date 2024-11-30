@@ -1,0 +1,17 @@
+ACTOR CWeapFlame_Toby : CWeapFlame replaces CWeapFlame
+{
+	Game Hexen
+	Weapon.UpSound "weapons/firestormup"
+	Inventory.PickupSound "weapons/pickup/firestorm"
+	+FLOATBOB
+	States
+	{
+	Spawn:
+		WCFM ABCD 4 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
+		WCFM E 1 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
+		WCFM E 2 Bright A_SpawnItemEx("FireStormPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WCFM E 1 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
+		WCFM FGH 4 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
+		Loop
+	}
+}

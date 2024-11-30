@@ -1,0 +1,5 @@
+ACTOR CFlameMissile_Toby : CFlameMissile replaces CFlameMissile
+{
+	+THRUGHOST
+	Decal BaronScorch
+}

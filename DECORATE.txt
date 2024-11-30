@@ -1,0 +1,76 @@
+//Ammo Directory
+#include "decorate/Ammo/DEC_MANA.dec"
+
+
+//Flashes Directory
+#include "decorate/Flashes/Axe_ID.dec"
+#include "decorate/Flashes/Hammer_ID.dec"
+#include "decorate/Flashes/Quietus_ID.dec"
+#include "decorate/Flashes/SerpentStaff_ID.dec"
+#include "decorate/Flashes/FireStorm_ID.dec"
+#include "decorate/Flashes/WraithVerge_ID.dec"
+#include "decorate/Flashes/IceSpell_ID.dec"
+#include "decorate/Flashes/ArcOfDeath_ID.dec"
+#include "decorate/Flashes/Bloodscourge_ID.dec"
+//#include "decorate/Flashes/BaseFlash.dec"
+
+
+//Gun Checkers Directory
+#include "decorate/GunCheckers/GunChecker_Axe.dec"
+#include "decorate/GunCheckers/GunChecker_Hammer.dec"
+#include "decorate/GunCheckers/GunChecker_Quietus.dec"
+#include "decorate/GunCheckers/GunChecker_SerpentStaff.dec"
+#include "decorate/GunCheckers/GunChecker_FireStorm.dec"
+#include "decorate/GunCheckers/GunChecker_WraithVerge.dec"
+#include "decorate/GunCheckers/GunChecker_IceSpell.dec"
+#include "decorate/GunCheckers/GunChecker_ArcOfDeath.dec"
+#include "decorate/GunCheckers/GunChecker_Bloodscourge.dec"
+
+
+//Pickup Checkers Directory
+
+//WeaponCheckers
+#include "decorate/PickupCheckers/WeaponCheckers/AxeChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/HammerChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/QuietusChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/SerpentStaffChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/FireStormChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/WraithVergeChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/IceSpellChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/ArcOfDeathChecker.dec"
+#include "decorate/PickupCheckers/WeaponCheckers/BloodscourgeChecker.dec"
+
+//Ammo Checkers
+#include "decorate/PickupCheckers/AmmoCheckers/Mana1Checker.dec"
+#include "decorate/PickupCheckers/AmmoCheckers/Mana2Checker.dec"
+#include "decorate/PickupCheckers/AmmoCheckers/Mana3Checker.dec"
+
+
+//Player Directory
+#include "decorate/Player/Fighter_Toby.dec"
+#include "decorate/Player/Cleric_Toby.dec"
+#include "decorate/Player/Mage_Toby.dec"
+
+//Projectiles Directory
+#include "decorate/Projectiles/HammerMissile_Toby.dec"
+#include "decorate/Projectiles/SwordMissile_Toby.dec"
+#include "decorate/Projectiles/FrostMissile_Toby.dec"
+#include "decorate/Projectiles/FlameMissile_Toby.dec"
+#include "decorate/Projectiles/StaffMissile_Toby.dec"
+
+//Weapons Directory
+//Fighter
+#include "decorate/Weapons/Fighter/Fighter_Fist.dec"
+#include "decorate/Weapons/Fighter/Fighter_Axe.dec"
+#include "decorate/Weapons/Fighter/Fighter_Hammer.dec"
+#include "decorate/Weapons/Fighter/Fighter_Quietus.dec"
+//Cleric
+#include "decorate/Weapons/Cleric/Cleric_Mace.dec"
+#include "decorate/Weapons/Cleric/Cleric_SerpentStaff.dec"
+#include "decorate/Weapons/Cleric/Cleric_FireStorm.dec"
+#include "decorate/Weapons/Cleric/Cleric_WraithVerge.dec"
+//Mage
+#include "decorate/Weapons/Mage/Mage_Wand.dec"
+#include "decorate/Weapons/Mage/Mage_IceSpell.dec"
+#include "decorate/Weapons/Mage/Mage_ArcOfDeath.dec"
+#include "decorate/Weapons/Mage/Mage_Bloodscourge.dec"

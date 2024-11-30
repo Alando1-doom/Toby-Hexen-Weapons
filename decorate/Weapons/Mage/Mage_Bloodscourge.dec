@@ -1,0 +1,147 @@
+ACTOR BloodscourgeP1_Toby : CustomInventory replaces MWeaponPiece1
+{
+	Game Hexen
+	SpawnID 37
+	-COUNTITEM
+	+FLOATBOB
+	+FANCYPICKUPSOUND
+	Inventory.PickupMessage "$TXT_BLOODSCOURGE_PIECE"
+	Inventory.PickupSound "weapons/bloodscourge/piece"
+	States
+	{
+	Spawn:
+		WMS1 A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WMS1 A 48 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("MWeaponPiece1_Toby", 1, "NoPickup")
+		TNT1 A 0 A_GiveInventory("MWeaponPiece1_Toby", 1)
+		TNT1 A 0 A_PlaySound("ann/weapons/bloodscourge/piece1")
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}
+
+
+ACTOR BloodscourgeP2_Toby : CustomInventory replaces MWeaponPiece2
+{
+	Game Hexen
+	SpawnID 38
+	-COUNTITEM
+	+FLOATBOB
+	+FANCYPICKUPSOUND
+	Inventory.PickupMessage "$TXT_BLOODSCOURGE_PIECE"
+	Inventory.PickupSound "weapons/bloodscourge/piece"
+	States
+	{
+	Spawn:
+		WMS2 A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WMS2 A 48 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("MWeaponPiece2_Toby", 1, "NoPickup")
+		TNT1 A 0 A_GiveInventory("MWeaponPiece2_Toby", 1)
+		TNT1 A 0 A_PlaySound("ann/weapons/bloodscourge/piece2")
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}
+
+
+ACTOR BloodscourgeP3_Toby : CustomInventory replaces MWeaponPiece3
+{
+	Game Hexen
+	SpawnID 39
+	-COUNTITEM
+	+FLOATBOB
+	+FANCYPICKUPSOUND
+	Inventory.PickupMessage "$TXT_BLOODSCOURGE_PIECE"
+	Inventory.PickupSound "weapons/bloodscourge/piece"
+	States
+	{
+	Spawn:
+		WMS3 A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		WMS3 A 48 Bright
+		Loop
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("MWeaponPiece3_Toby", 1, "NoPickup")
+		TNT1 A 0 A_GiveInventory("MWeaponPiece3_Toby", 1)
+		TNT1 A 0 A_PlaySound("ann/weapons/bloodscourge/piece3")
+		Stop
+	NoPickup:
+		TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+		Fail
+	}
+}
+
+
+ACTOR MageWeaponPiece_Toby : WeaponPiece
+{
+	Inventory.PickupSound "misc/w_pkup"
+	Inventory.PickupMessage "$TXT_BLOODSCOURGE_PIECE"
+	Inventory.ForbiddenTo FighterPlayer, ClericPlayer
+	WeaponPiece.Weapon MWeapBloodscourge_Toby
+	+FLOATBOB
+}
+
+
+
+ACTOR MWeaponPiece1_Toby : MageWeaponPiece_Toby
+{
+	Game Hexen
+	WeaponPiece.Number 1
+	States
+	{
+	Spawn:
+		WMS1 A -1 Bright
+		Stop
+	}
+}
+
+
+ACTOR MWeaponPiece2_Toby : MageWeaponPiece_Toby
+{
+	Game Hexen
+	WeaponPiece.Number 2
+	States
+	{
+	Spawn:
+		WMS2 A -1 Bright
+		Stop
+	}
+}
+
+
+ACTOR MWeaponPiece3_Toby : MageWeaponPiece_Toby
+{
+	Game Hexen
+	WeaponPiece.Number 3
+	States
+	{
+	Spawn:
+		WMS3 A -1 Bright
+		Stop
+	}
+}
+
+
+ACTOR MWeapBloodscourge_Toby : MWeapBloodscourge 12347
+{
+	Game Hexen
+	Weapon.UpSound "weapons/bloodscourgeup"
+	Inventory.PickupSound "WeaponBuild"
+	States
+	{
+	Spawn:
+		BSRG AAAA 4 Bright A_RadiusGive("GunChecker_Bloodscourge", 96, RGF_PLAYERS, 1)
+		BSRG A 4 Bright A_RadiusGive("GunChecker_Bloodscourge", 96, RGF_PLAYERS, 1)
+		BSRG A 0 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		BSRG A 4 Bright A_RadiusGive("GunChecker_Bloodscourge", 96, RGF_PLAYERS, 1)
+		BSRG AAAA 4 Bright A_RadiusGive("GunChecker_Bloodscourge", 96, RGF_PLAYERS, 1)
+		Loop
+	}
+}

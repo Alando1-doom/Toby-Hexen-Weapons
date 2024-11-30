@@ -1,0 +1,106 @@
+//Fighter Weapons
+
+weapons/fistup						dsfistup
+
+weapons/pickup/axe				getaxe
+weapons/axeup						axeup
+ann/weapons/axe					annaxe
+$rolloff weapon/axe/beacon   linear 56 300
+weapon/axe/beacon				axebcn
+
+weapons/pickup/hammer		getham
+weapons/hammerup				hamup
+ann/weapons/hammer				annham
+$rolloff weapon/hammer/beacon   linear 56 300
+weapon/hammer/beacon		hambcn
+
+weapons/quietus/piece			swrdpiec
+weapons/swordup					swrdup
+ann/weapons/quietus				annswrd
+ann/weapons/quietus/piece1	annswrd1
+ann/weapons/quietus/piece2	annswrd2
+ann/weapons/quietus/piece3	annswrd3
+$rolloff weapon/quietus/beacon   linear 56 300
+weapon/quietus/beacon			swrdbcn
+
+
+//Cleric Weapons
+
+weapons/maceup							maceup
+
+weapons/pickup/serpentstaff			getsrpt
+weapons/serpstaffup						srptup
+ann/weapons/serpentstaff				annsrpt
+$rolloff weapon/serpentstaff/beacon   linear 56 300
+weapon/serpentstaff/beacon			srptbcn
+
+weapons/pickup/firestorm				getfstrm
+weapons/firestormup						fstrmup
+ann/weapons/firestorm					annfstrm
+$rolloff weapon/firestorm/beacon   linear 56 300
+weapon/firestorm/beacon				fstrmbcn
+
+weapons/wraithverge/piece			wrvgpiec
+weapons/holyup								wrvgup
+ann/weapons/wraithverge				annwvrg
+ann/weapons/wraithverge/piece1	annwvrg1
+ann/weapons/wraithverge/piece2	annwvrg2
+ann/weapons/wraithverge/piece3	annwvrg3
+$rolloff weapon/wraithverge/beacon   linear 56 300
+weapon/wraithverge/beacon			wrvgbcn
+
+
+//Mage Weapons
+
+weapons/wandup								wandup
+
+weapons/pickup/icespell						getice
+weapons/iceup									iceup
+ann/weapons/icespell							annice
+$rolloff weapon/icespell/beacon   linear 56 300
+weapon/icespell/beacon						icebcn
+
+weapons/pickup/arcofdeath				getarc
+weapons/arcup									arcup
+ann/weapons/arcofdeath						annarc
+$rolloff weapon/arcofdeath/beacon   linear 56 300
+weapon/arcofdeath/beacon					arcbcn
+
+weapons/bloodscourge/piece				bsrgpiec
+weapons/bloodscourgeup					bsrgup
+ann/weapons/bloodscourge				annbsrg
+ann/weapons/bloodscourge/piece1	annbsrg1
+ann/weapons/bloodscourge/piece2	annbsrg2
+ann/weapons/bloodscourge/piece3	annbsrg3
+$rolloff weapon/bloodscourge/beacon   linear 56 300
+weapon/bloodscourge/beacon			bsrgbcn
+
+
+//Ammo
+
+ammo/pickup/mana1				bluepick
+ann/ammo/mana1					annblue
+$rolloff ammo/mana1/beacon   linear 56 300
+ammo/mana1/beacon				bluebcn
+
+ammo/pickup/mana2				grnpick
+ann/ammo/mana2					anngreen
+$rolloff ammo/mana2/beacon   linear 56 300
+ammo/mana2/beacon				grnbcn
+
+ammo/pickup/mana3				man3pick
+ann/ammo/mana3					annman3
+$rolloff ammo/mana3/beacon   linear 56 300
+ammo/mana3/beacon				man3bcn
+
+
+
+stat/full		dsfull
+
+//Player Sounds
+
+$random player/footstep { player/step1 player/step2 player/step3 player/step4 }
+player/step1				step1
+player/step2				step2
+player/step3				step3
+player/step4				step4

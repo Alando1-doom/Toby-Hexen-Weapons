@@ -1,0 +1,27 @@
+ACTOR MagePlayer_Toby : MagePlayer
+{
+	Player.StartItem "MWeapWand_Toby"
+	Player.WeaponSlot 1, MWeapWand_Toby
+	Player.WeaponSlot 2, MWeapFrost_Toby
+	Player.WeaponSlot 3, MWeapLightning_Toby
+	Player.WeaponSlot 4, MWeapBloodscourge_Toby
+	Player.ColorRange 146, 163
+	Player.Colorset		0, "Blue",			146, 163,    161
+	Player.ColorsetFile 1, "Red",			"TRANTBL7",  0xB3
+	Player.ColorsetFile 2, "Gold",			"TRANTBL8",  0x8C
+	Player.ColorsetFile 3, "Green",			"TRANTBLA",  0xC9
+	Player.ColorsetFile 4, "Gray",			"TRANTBLB",  0x30
+	Player.ColorsetFile 5, "Brown",			"TRANTBLC",  0x72
+	States
+	{
+	Spawn:
+		MAGE A -1
+		Stop
+	See:
+        MAGE A 5
+        MAGE B 5
+        MAGE C 5 
+        MAGE D 5
+		Goto Spawn
+	}
+}

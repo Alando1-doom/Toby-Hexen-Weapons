@@ -1,0 +1,5 @@
+ACTOR CStaffMissile_Toby : CStaffMissile replaces CStaffMissile
+{
+	+THRUGHOST
+	Decal BaronScorch
+}
