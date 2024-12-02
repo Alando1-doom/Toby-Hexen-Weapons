@@ -1,4 +1,4 @@
-ACTOR CWeapStaff_Toby : CWeapStaff replaces CWeapStaff
+ACTOR CWeapStaff_Toby : CWeapStaff
 {
 	Game Hexen
 	Weapon.UpSound "weapons/serpstaffup"
@@ -6,11 +6,39 @@ ACTOR CWeapStaff_Toby : CWeapStaff replaces CWeapStaff
 	States
 	{
 	Spawn:
-		WCSS AAAA 4 A_RadiusGive("GunChecker_SerpentStaff", 96, RGF_PLAYERS, 1)
-		WCSS A 4 A_RadiusGive("GunChecker_SerpentStaff", 96, RGF_PLAYERS, 1)
-		WCSS A 0 A_SpawnItemEx("SerpentStaffPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WCSS A 4 A_RadiusGive("GunChecker_SerpentStaff", 96, RGF_PLAYERS, 1)
-		WCSS AAAA 4 A_RadiusGive("GunChecker_SerpentStaff", 96, RGF_PLAYERS, 1)
-		Loop
+		WCSS A 1 A_SpawnItemEx("SerpentStaffPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WCSS AA 25 
+        Loop
 	}
+}
+
+
+ACTOR CWeapStaff_Giver : CustomInventory replaces CWeapStaff
+{
+	Game Hexen
+	SpawnID 32
+    Inventory.PickupMessage "$TXT_WEAPON_C2"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+    States
+    {
+    Spawn:
+        WCSS A 1 A_SpawnItemEx("SerpentStaffPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WCSS AA 25 
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("CWeapStaff_Toby", 1, "HasStaff")
+        TNT1 A 1 A_GiveInventory("CWeapStaff_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/serpentstaff", "Auto", 0, -1)
+        Stop
+	HasStaff:
+        TNT1 A 1 A_JumpIfInventory("Mana1", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("Mana1", 25)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/serpentstaff", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/serpentstaff", "Auto", 0, -1)
+		Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+		}
 }

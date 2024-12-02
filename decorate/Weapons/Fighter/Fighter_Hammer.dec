@@ -1,4 +1,4 @@
-ACTOR FWeapHammer_Toby : FWeapHammer replaces FWeapHammer
+ACTOR FWeapHammer_Toby : FWeapHammer
 {
 	Game Hexen
 	Weapon.UpSound "weapons/hammerup"
@@ -6,11 +6,39 @@ ACTOR FWeapHammer_Toby : FWeapHammer replaces FWeapHammer
 	States
 	{
 	Spawn:
-		WFHM AAAA 4 A_RadiusGive("GunChecker_Hammer", 96, RGF_PLAYERS, 1)
-		WFHM A 4 A_RadiusGive("GunChecker_Hammer", 96, RGF_PLAYERS, 1)
-		WFHM A 0 A_SpawnItemEx("HammerPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WFHM A 4 A_RadiusGive("GunChecker_Hammer", 96, RGF_PLAYERS, 1)
-		WFHM AAAA 4 A_RadiusGive("GunChecker_Hammer", 96, RGF_PLAYERS, 1)
-		Loop
+		WFHM A 1 A_SpawnItemEx("HammerPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WFHM AA 25 
+        Loop
 	}
+}
+
+
+ACTOR FWeapHammer_Giver : CustomInventory replaces FWeapHammer
+{
+	Game Hexen
+	SpawnID 28
+    Inventory.PickupMessage "$TXT_WEAPON_F3"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+    States
+    {
+    Spawn:
+        WFHM A 1 A_SpawnItemEx("HammerPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WFHM AA 25 
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("FWeapHammer_Toby", 1, "HasHammer")
+        TNT1 A 1 A_GiveInventory("FWeapHammer_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/hammer", "Auto", 0, -1)
+        Stop
+	HasHammer:
+        TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("Mana2", 25)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/hammer", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/hammer", "Auto", 0, -1)
+		Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+		}
 }

@@ -16,7 +16,7 @@ ACTOR Mana1_Toby : CustomInventory replaces Mana1
     Pickup:
         TNT1 A 1 A_JumpIfInventory("Mana1", 200, "NoPickup")
         TNT1 A 1 A_GiveInventory("Mana1", 15)
-		TNT1 A 1 A_PlaySound("ann/ammo/mana1")
+		TNT1 A 1 A_PlaySoundEx("ann/ammo/mana1", "SoundSlot7", 0, -1)
         Stop
     NoPickup:
         TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
@@ -43,7 +43,7 @@ ACTOR Mana2_Toby : CustomInventory replaces Mana2
     Pickup:
         TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
         TNT1 A 1 A_GiveInventory("Mana2", 15)
-		TNT1 A 1 A_PlaySound("ann/ammo/mana2")
+		TNT1 A 1 A_PlaySoundEx("ann/ammo/mana2", "SoundSlot7", 0, -1)
         Stop
     NoPickup:
         TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
@@ -72,17 +72,17 @@ ACTOR Mana3_Toby : CustomInventory replaces Mana3
 		TNT1 A 1 A_JumpIfInventory("Mana1", 200, "ManaCheck2")
 		TNT1 A 0 A_GiveInventory("Mana1", 20)
 		TNT1 A 0 A_GiveInventory("Mana2", 20)
-		TNT1 A 1 A_PlaySound("ann/ammo/mana3")
+		TNT1 A 1 A_PlaySoundEx("ann/ammo/mana3", "SoundSlot7", 0, -1)
 		Stop
 	ManaCheck1: //Check Blue Mana
 		TNT1 A 1 A_JumpIfInventory("Mana1", 200, "NoPickup")
 		TNT1 A 0 A_GiveInventory("Mana1", 20)
-		TNT1 A 1 A_PlaySound("ann/ammo/mana3")
+		TNT1 A 1 A_PlaySoundEx("ann/ammo/mana3", "SoundSlot7", 0, -1)
 		Stop
 	ManaCheck2: //Check Green Mana
 		TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
 		TNT1 A 0 A_GiveInventory("Mana2", 20)
-		TNT1 A 1 A_PlaySound("ann/ammo/mana3")
+		TNT1 A 1 A_PlaySoundEx("ann/ammo/mana3", "SoundSlot7", 0, -1)
 		Stop
 	NoPickup:
         TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)

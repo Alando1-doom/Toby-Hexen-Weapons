@@ -1,32 +1,6 @@
 //Ammo Directory
 #include "decorate/Ammo/DEC_MANA.dec"
 
-
-//Flashes Directory
-#include "decorate/Flashes/Axe_ID.dec"
-#include "decorate/Flashes/Hammer_ID.dec"
-#include "decorate/Flashes/Quietus_ID.dec"
-#include "decorate/Flashes/SerpentStaff_ID.dec"
-#include "decorate/Flashes/FireStorm_ID.dec"
-#include "decorate/Flashes/WraithVerge_ID.dec"
-#include "decorate/Flashes/IceSpell_ID.dec"
-#include "decorate/Flashes/ArcOfDeath_ID.dec"
-#include "decorate/Flashes/Bloodscourge_ID.dec"
-//#include "decorate/Flashes/BaseFlash.dec"
-
-
-//Gun Checkers Directory
-#include "decorate/GunCheckers/GunChecker_Axe.dec"
-#include "decorate/GunCheckers/GunChecker_Hammer.dec"
-#include "decorate/GunCheckers/GunChecker_Quietus.dec"
-#include "decorate/GunCheckers/GunChecker_SerpentStaff.dec"
-#include "decorate/GunCheckers/GunChecker_FireStorm.dec"
-#include "decorate/GunCheckers/GunChecker_WraithVerge.dec"
-#include "decorate/GunCheckers/GunChecker_IceSpell.dec"
-#include "decorate/GunCheckers/GunChecker_ArcOfDeath.dec"
-#include "decorate/GunCheckers/GunChecker_Bloodscourge.dec"
-
-
 //Pickup Checkers Directory
 
 //WeaponCheckers

@@ -1,4 +1,4 @@
-ACTOR MWeapLightning_Toby : MWeapLightning replaces MWeapLightning
+ACTOR MWeapLightning_Toby : MWeapLightning
 {
 	Game Hexen
 	Weapon.UpSound "weapons/arcup"
@@ -7,11 +7,41 @@ ACTOR MWeapLightning_Toby : MWeapLightning replaces MWeapLightning
 	States
 	{
 	Spawn:
-		WMLG ABCD 4 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
-		WMLG E 1 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
-		WMLG E 2 Bright A_SpawnItemEx("ArcOfDeathPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WMLG E 1 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
-		WMLG FGH 4 Bright A_RadiusGive("GunChecker_ArcOfDeath", 96, RGF_PLAYERS, 1)
-		Loop
+		WMLG ABCD 4 Bright
+        WMLG E 4 Bright A_SpawnItemEx("ArcOfDeathPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WMLG FGH 4 Bright
+        Loop
 	}
+}
+
+
+ACTOR MWeapLightning_Giver : CustomInventory replaces MWeapLightning
+{
+	Game Hexen
+    Inventory.PickupMessage "$TXT_WEAPON_M3"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+	+FLOATBOB
+    States
+    {
+    Spawn:
+		WMLG ABCD 4 Bright
+        WMLG E 4 Bright A_SpawnItemEx("ArcOfDeathPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WMLG FGH 4 Bright
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("MWeapLightning_Toby", 1, "HasArc")
+        TNT1 A 1 A_GiveInventory("MWeapLightning_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/arcofdeath", "Auto", 0, -1)
+        Stop
+	HasArc:
+        TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("Mana2", 25)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/arcofdeath", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/arcofdeath", "Auto", 0, -1)
+		Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+		}
 }

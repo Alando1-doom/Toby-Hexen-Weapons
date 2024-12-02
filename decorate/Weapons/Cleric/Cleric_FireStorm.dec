@@ -1,4 +1,4 @@
-ACTOR CWeapFlame_Toby : CWeapFlame replaces CWeapFlame
+ACTOR CWeapFlame_Toby : CWeapFlame
 {
 	Game Hexen
 	Weapon.UpSound "weapons/firestormup"
@@ -7,11 +7,41 @@ ACTOR CWeapFlame_Toby : CWeapFlame replaces CWeapFlame
 	States
 	{
 	Spawn:
-		WCFM ABCD 4 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
-		WCFM E 1 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
-		WCFM E 2 Bright A_SpawnItemEx("FireStormPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WCFM E 1 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
-		WCFM FGH 4 Bright A_RadiusGive("GunChecker_FireStorm", 96, RGF_PLAYERS, 1)
-		Loop
+		WCFM ABCD 4 Bright
+        WCFM E 4 Bright A_SpawnItemEx("FireStormPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WCFM FGH 4 Bright
+        Loop
 	}
+}
+
+
+ACTOR CWeapFlame_Giver : CustomInventory replaces CWeapFlame
+{
+	Game Hexen
+    Inventory.PickupMessage "$TXT_WEAPON_C3"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+	+FLOATBOB
+    States
+    {
+    Spawn:
+		WCFM ABCD 4 Bright
+        WCFM E 4 Bright A_SpawnItemEx("FireStormPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WCFM FGH 4 Bright
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("CWeapFlame_Toby", 1, "HasFire")
+        TNT1 A 1 A_GiveInventory("CWeapFlame_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/firestorm", "Auto", 0, -1)
+        Stop
+	HasFire:
+        TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("Mana2", 25)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/firestorm", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/firestorm", "Auto", 0, -1)
+		Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+		}
 }
