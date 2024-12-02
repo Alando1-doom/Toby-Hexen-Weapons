@@ -128,7 +128,7 @@ ACTOR FWeaponPiece3_Toby : FighterWeaponPiece_Toby
 }
 
 
-ACTOR FWeapQuietus_Toby : FWeapQuietus 12345
+ACTOR FWeapQuietus_Toby : FWeapQuietus 
 {
 	Game Hexen
 	Weapon.UpSound "weapons/swordup"
@@ -136,11 +136,52 @@ ACTOR FWeapQuietus_Toby : FWeapQuietus 12345
 	States
 	{
 	Spawn:
-		SWRD AAAA 4 Bright A_RadiusGive("GunChecker_Quietus", 96, RGF_PLAYERS, 1)
-		SWRD A 4 Bright A_RadiusGive("GunChecker_Quietus", 96, RGF_PLAYERS, 1)
-		SWRD A 0 Bright A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		SWRD A 4 Bright A_RadiusGive("GunChecker_Quietus", 96, RGF_PLAYERS, 1)
-		SWRD AAAA 4 Bright A_RadiusGive("GunChecker_Quietus", 96, RGF_PLAYERS, 1)
-		Loop
+		SWRD A 1 A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        SWRD AA 25 
+        Loop
 	}
+}
+
+
+ACTOR FWeapQuietus_Giver : CustomInventory 12345
+{
+	Game Hexen
+   Inventory.PickupMessage "$TXT_WEAPON_F4"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+    States
+    {
+    Spawn:
+        SWRD A 1 Bright A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        SWRD AA 25 Bright
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("FWeapQuietus_Toby", 1, "HasSword")
+        TNT1 A 1 A_GiveInventory("FWeapQuietus_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("WeaponBuild", "Auto", 0, -1)
+        Stop
+	HasSword:
+        TNT1 A 1 A_JumpIfInventory("Mana2", 200, "ManaCheck1")
+		TNT1 A 1 A_JumpIfInventory("Mana1", 200, "ManaCheck2")
+		TNT1 A 1 A_GiveInventory("Mana1", 20)
+        TNT1 A 1 A_GiveInventory("Mana2", 20)
+		TNT1 A 1 A_PlaySoundEx("WeaponBuild", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/quietus", "Auto", 0, -1)
+		Stop
+	ManaCheck1: //Check Blue Mana
+		TNT1 A 1 A_JumpIfInventory("Mana1", 200, "NoPickup")
+		TNT1 A 0 A_GiveInventory("Mana1", 20)
+		TNT1 A 1 A_PlaySoundEx("WeaponBuild", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/quietus", "Auto", 0, -1)
+		Stop
+	ManaCheck2: //Check Green Mana
+		TNT1 A 1 A_JumpIfInventory("Mana2", 200, "NoPickup")
+		TNT1 A 0 A_GiveInventory("Mana2", 20)
+		TNT1 A 1 A_PlaySoundEx("WeaponBuild", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/quietus", "Auto", 0, -1)
+		Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+		}
 }

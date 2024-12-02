@@ -1,4 +1,4 @@
-ACTOR MWeapFrost_Toby : MWeapFrost replaces MWeapFrost
+ACTOR MWeapFrost_Toby : MWeapFrost
 {
 	Game Hexen
 	Weapon.UpSound "weapons/iceup"
@@ -7,11 +7,42 @@ ACTOR MWeapFrost_Toby : MWeapFrost replaces MWeapFrost
 	States
 	{
 	Spawn:
-		WMCS ABCA 4 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
-		WMCS B 1 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
-		WMCS B 2 Bright A_SpawnItemEx("IceSpellPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WMCS B 1 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
-		WMCS CABC 4 Bright A_RadiusGive("GunChecker_IceSpell", 96, RGF_PLAYERS, 1)
-		Loop
+		WMCS ABCA 4 Bright
+        WMCS B 4 Bright A_SpawnItemEx("IceSpellPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WMCS CABC 4 Bright 
+        Loop
 	}
+}
+
+
+ACTOR MWeapFrost_Giver : CustomInventory replaces MWeapFrost
+{
+	Game Hexen
+	SpawnID 36
+    Inventory.PickupMessage "$TXT_WEAPON_M2"
+	Inventory.RespawnTics 105
+	Inventory.PickupSound ""
+	+FLOATBOB
+    States
+    {
+    Spawn:
+		WMCS ABCA 4 Bright
+        WMCS B 4 Bright A_SpawnItemEx("IceSpellPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+        WMCS CABC 4 Bright 
+        Loop
+    Pickup:
+		TNT1 A 1 A_JumpIfInventory("MWeapFrost_Toby", 1, "HasIce")
+        TNT1 A 1 A_GiveInventory("MWeapFrost_Toby", 1)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/icespell", "Auto", 0, -1)
+        Stop
+	HasIce:
+        TNT1 A 1 A_JumpIfInventory("Mana1", 200, "NoPickup")
+        TNT1 A 1 A_GiveInventory("Mana1", 25)
+		TNT1 A 1 A_PlaySoundEx("weapons/pickup/icespell", "Auto", 0, -1)
+		TNT1 A 1 A_PlaySoundEx("ann/weapons/icespell", "Auto", 0, -1)
+		Stop
+    NoPickup:
+        TNT1 A 1 A_PlaySoundEx("stat/full", "SoundSlot6", 0, 0)
+        Fail
+		}
 }

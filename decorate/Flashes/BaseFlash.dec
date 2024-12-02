@@ -1,9 +1,0 @@
-ACTOR BaseFlash
-{
-    Radius 11
-    Height 8
-    Speed 0
-    +CORPSE
-    +FLOORCLIP
-    +DONTSPLASH
-}
