@@ -65,7 +65,15 @@ ACTOR Mana3_Toby : CustomInventory replaces Mana3
 	{
 	Spawn:
 		MAN3 A 3 Bright A_SpawnItemEx("AmmoPickupChecker_Mana3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        MAN3 BCDEFGHIJKLMNOP 3 Bright
+        MAN3 BCDEFGHIJKLM 3 Bright
+		MAN3 N 3 Bright A_SpawnItemEx("AmmoPickupChecker_Mana3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		MAN3 OPABCDEFGHIJ 3 Bright
+		MAN3 K 3 Bright A_SpawnItemEx("AmmoPickupChecker_Mana3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		MAN3 LMNOPABCDEFG 3 Bright
+		MAN3 H 3 Bright A_SpawnItemEx("AmmoPickupChecker_Mana3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		MAN3 IJKLMNOPABCD 3 Bright
+		MAN3 E 3 Bright A_SpawnItemEx("AmmoPickupChecker_Mana3", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
+		MAN3 FGHIJKLMNOP 3 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("Mana2", 200, "ManaCheck1")

@@ -7,7 +7,7 @@ ACTOR FWeapAxe_Toby : FWeapAxe
 	{
 	Spawn:
 		WFAX A 1 A_SpawnItemEx("AxePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WFAX AA 25 
+        WFAX AA 21 
         Loop
 	}
 }
@@ -24,7 +24,7 @@ ACTOR FWeapAxe_Giver : CustomInventory replaces FWeapAxe
     {
     Spawn:
         WFAX A 1 A_SpawnItemEx("AxePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WFAX AA 25 
+        WFAX AA 21
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("FWeapAxe_Toby", 1, "HasAxe")

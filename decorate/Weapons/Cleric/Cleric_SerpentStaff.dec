@@ -7,7 +7,7 @@ ACTOR CWeapStaff_Toby : CWeapStaff
 	{
 	Spawn:
 		WCSS A 1 A_SpawnItemEx("SerpentStaffPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WCSS AA 25 
+        WCSS AA 21 
         Loop
 	}
 }
@@ -24,7 +24,7 @@ ACTOR CWeapStaff_Giver : CustomInventory replaces CWeapStaff
     {
     Spawn:
         WCSS A 1 A_SpawnItemEx("SerpentStaffPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WCSS AA 25 
+        WCSS AA 21 
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("CWeapStaff_Toby", 1, "HasStaff")
