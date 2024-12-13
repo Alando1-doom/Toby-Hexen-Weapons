@@ -11,7 +11,7 @@ ACTOR QuietusP1_Toby : CustomInventory replaces FWeaponPiece1
 	{
 	Spawn:
 		WFR1 A 1 Bright A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WFR1 A 48 Bright
+		WFR1 A 40 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("FWeaponPiece1_Toby", 1, "NoPickup")
@@ -38,7 +38,7 @@ ACTOR QuietusP2_Toby : CustomInventory replaces FWeaponPiece2
 	{
 	Spawn:
 		WFR2 A 1 Bright A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WFR2 A 48 Bright
+		WFR2 A 40 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("FWeaponPiece2_Toby", 1, "NoPickup")
@@ -65,7 +65,7 @@ ACTOR QuietusP3_Toby : CustomInventory replaces FWeaponPiece3
 	{
 	Spawn:
 		WFR3 A 1 Bright A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WFR3 A 48 Bright
+		WFR3 A 40 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("FWeaponPiece3_Toby", 1, "NoPickup")
@@ -137,7 +137,7 @@ ACTOR FWeapQuietus_Toby : FWeapQuietus
 	{
 	Spawn:
 		SWRD A 1 A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        SWRD AA 25 
+        SWRD AA 21 
         Loop
 	}
 }
@@ -153,7 +153,7 @@ ACTOR FWeapQuietus_Giver : CustomInventory 12345
     {
     Spawn:
         SWRD A 1 Bright A_SpawnItemEx("QuietusPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        SWRD AA 25 Bright
+        SWRD AA 21 Bright
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("FWeapQuietus_Toby", 1, "HasSword")
