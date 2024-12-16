@@ -1,5 +1,6 @@
 ACTOR FrostMissile_Toby : FrostMissile replaces FrostMissile
 {
 	+THRUGHOST
+	+DONTREFLECT
 	Decal RailScorch
 }
