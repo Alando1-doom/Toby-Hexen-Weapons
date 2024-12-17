@@ -1,5 +1,6 @@
 ACTOR FSwordMissile_Toby : FSwordMissile replaces FSwordMissile
 {
 	+THRUGHOST
+	+DONTREFLECT
 	Decal SwordLightning
 }

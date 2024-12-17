@@ -1,5 +1,6 @@
 ACTOR HammerMissile_Toby : HammerMissile replaces HammerMissile
 {
 	+THRUGHOST
+	+DONTREFLECT
 	Decal Scorch
 }
