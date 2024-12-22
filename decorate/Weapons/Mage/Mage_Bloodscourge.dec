@@ -11,7 +11,7 @@ ACTOR BloodscourgeP1_Toby : CustomInventory replaces MWeaponPiece1
 	{
 	Spawn:
 		WMS1 A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WMS1 A 40 Bright
+		WMS1 A 36 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("MWeaponPiece1_Toby", 1, "NoPickup")
@@ -38,7 +38,7 @@ ACTOR BloodscourgeP2_Toby : CustomInventory replaces MWeaponPiece2
 	{
 	Spawn:
 		WMS2 A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WMS2 A 40 Bright
+		WMS2 A 36 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("MWeaponPiece2_Toby", 1, "NoPickup")
@@ -65,7 +65,7 @@ ACTOR BloodscourgeP3_Toby : CustomInventory replaces MWeaponPiece3
 	{
 	Spawn:
 		WMS3 A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WMS3 A 40 Bright
+		WMS3 A 36 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("MWeaponPiece3_Toby", 1, "NoPickup")
@@ -138,7 +138,7 @@ ACTOR MWeapBloodscourge_Toby : MWeapBloodscourge
 	{
 	Spawn:
 		BSRG A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        BSRG AA 21 Bright
+        BSRG AA 18 Bright
         Loop
 	}
 }
@@ -154,7 +154,7 @@ ACTOR MWeapBloodscourge_Giver : CustomInventory 12347
     {
     Spawn:
         BSRG A 1 Bright A_SpawnItemEx("BloodscourgePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        BSRG AA 21 Bright
+        BSRG AA 18 Bright
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("MWeapBloodscourge_Toby", 1, "HasBlood")

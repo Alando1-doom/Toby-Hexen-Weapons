@@ -11,7 +11,7 @@ ACTOR WraithVergeP1_Toby : CustomInventory replaces CWeaponPiece1
 	{
 	Spawn:
 		WCH1 A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WCH1 A 40 Bright
+		WCH1 A 36 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("CWeaponPiece1_Toby", 1, "NoPickup")
@@ -38,7 +38,7 @@ ACTOR WraithVergeP2_Toby : CustomInventory replaces CWeaponPiece2
 	{
 	Spawn:
 		WCH2 A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WCH2 A 40 Bright
+		WCH2 A 36 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("CWeaponPiece2_Toby", 1, "NoPickup")
@@ -65,7 +65,7 @@ ACTOR WraithVergeP3_Toby : CustomInventory replaces CWeaponPiece3
 	{
 	Spawn:
 		WCH3 A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-		WCH3 A 40 Bright
+		WCH3 A 36 Bright
 		Loop
 	Pickup:
 		TNT1 A 1 A_JumpIfInventory("CWeaponPiece3_Toby", 1, "NoPickup")
@@ -136,7 +136,7 @@ ACTOR CWeapWraithverge_Toby : CWeapWraithverge
 	{
 	Spawn:
 		WVRG A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WVRG AA 21 Bright
+        WVRG AA 18 Bright
         Loop
 	}
 }
@@ -152,7 +152,7 @@ ACTOR CWeapWraithverge_Giver : CustomInventory 12346
     {
     Spawn:
         WVRG A 1 Bright A_SpawnItemEx("WraithVergePickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WVRG AA 21 Bright
+        WVRG AA 18 Bright
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("CWeapWraithverge_Toby", 1, "HasHoly")

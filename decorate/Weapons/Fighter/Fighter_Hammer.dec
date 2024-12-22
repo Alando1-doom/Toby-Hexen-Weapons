@@ -7,7 +7,7 @@ ACTOR FWeapHammer_Toby : FWeapHammer
 	{
 	Spawn:
 		WFHM A 1 A_SpawnItemEx("HammerPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WFHM AA 21
+        WFHM AA 18
         Loop
 	}
 }
@@ -24,7 +24,7 @@ ACTOR FWeapHammer_Giver : CustomInventory replaces FWeapHammer
     {
     Spawn:
         WFHM A 1 A_SpawnItemEx("HammerPickupChecker", 0, 0, 0, 0, 0, 0, 0, SXF_NOCHECKPOSITION, 0)
-        WFHM AA 21
+        WFHM AA 18
         Loop
     Pickup:
 		TNT1 A 1 A_JumpIfInventory("FWeapHammer_Toby", 1, "HasHammer")
