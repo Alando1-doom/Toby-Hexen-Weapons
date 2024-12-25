@@ -1,0 +1,7 @@
+//Regardless if this projectile is replaced, for some reason, the +DONTREFLECT flag doesn't work against Heresiarch
+//The spirits will always seek the player once Heresiarch casts his invulnerability spell
+ACTOR HolySpirit_Toby : HolySpirit //replaces HolySpirit
+{
+	+THRUGHOST
+	+DONTREFLECT
+}

@@ -31,6 +31,9 @@
 #include "decorate/Projectiles/FrostMissile_Toby.dec"
 #include "decorate/Projectiles/FlameMissile_Toby.dec"
 #include "decorate/Projectiles/StaffMissile_Toby.dec"
+#include "decorate/Projectiles/HolyMissile_Toby.dec"
+#include "decorate/Projectiles/HolySpirit_Toby.dec"
+#include "decorate/Projectiles/MageStaffFX2_Toby.dec"
 
 //Weapons Directory
 //Fighter
