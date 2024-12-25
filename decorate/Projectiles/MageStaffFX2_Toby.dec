@@ -1,0 +1,5 @@
+ACTOR MageStaffFX2_Toby : MageStaffFX2 replaces MageStaffFX2
+{
+	+THRUGHOST
+	+DONTREFLECT
+}
