@@ -4,6 +4,7 @@ ACTOR CWeapFlame_Toby : CWeapFlame
 	Weapon.UpSound "weapons/firestormup"
 	Inventory.PickupSound "weapons/pickup/firestorm"
 	+FLOATBOB
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

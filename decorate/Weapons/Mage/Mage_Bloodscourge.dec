@@ -134,6 +134,7 @@ ACTOR MWeapBloodscourge_Toby : MWeapBloodscourge
 	Game Hexen
 	Weapon.UpSound "weapons/bloodscourgeup"
 	Inventory.PickupSound "WeaponBuild"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

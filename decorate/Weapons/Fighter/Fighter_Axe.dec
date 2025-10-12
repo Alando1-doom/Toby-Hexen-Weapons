@@ -3,6 +3,7 @@ ACTOR FWeapAxe_Toby : FWeapAxe
 	Game Hexen
 	Weapon.UpSound "weapons/axeup"
 	Inventory.PickupSound "weapons/pickup/axe"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

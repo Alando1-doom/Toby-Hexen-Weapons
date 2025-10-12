@@ -3,6 +3,7 @@ ACTOR FWeapHammer_Toby : FWeapHammer
 	Game Hexen
 	Weapon.UpSound "weapons/hammerup"
 	Inventory.PickupSound "weapons/pickup/hammer"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

@@ -132,6 +132,7 @@ ACTOR CWeapWraithverge_Toby : CWeapWraithverge
 	Game Hexen
 	Weapon.UpSound "weapons/holyup"
 	Inventory.PickupSound "WeaponBuild"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

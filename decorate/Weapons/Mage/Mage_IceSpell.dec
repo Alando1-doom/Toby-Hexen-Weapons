@@ -4,6 +4,7 @@ ACTOR MWeapFrost_Toby : MWeapFrost
 	Weapon.UpSound "weapons/iceup"
 	Inventory.PickupSound "weapons/pickup/icespell"
 	+FLOATBOB
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

@@ -2,4 +2,5 @@ ACTOR FWeapFist_Toby : FWeapFist
 {
 	Game Hexen
 	Weapon.UpSound "weapons/fistup"
+	+WEAPON.CHEATNOTWEAPON
 }

@@ -3,6 +3,7 @@ ACTOR CWeapStaff_Toby : CWeapStaff
 	Game Hexen
 	Weapon.UpSound "weapons/serpstaffup"
 	Inventory.PickupSound "weapons/pickup/serpentstaff"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

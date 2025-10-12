@@ -133,6 +133,7 @@ ACTOR FWeapQuietus_Toby : FWeapQuietus
 	Game Hexen
 	Weapon.UpSound "weapons/swordup"
 	Inventory.PickupSound "WeaponBuild"
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

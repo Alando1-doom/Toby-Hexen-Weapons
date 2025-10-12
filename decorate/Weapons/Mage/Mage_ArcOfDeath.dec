@@ -4,6 +4,7 @@ ACTOR MWeapLightning_Toby : MWeapLightning
 	Weapon.UpSound "weapons/arcup"
 	Inventory.PickupSound "weapons/pickup/arcofdeath"
 	+FLOATBOB
+	+WEAPON.CHEATNOTWEAPON
 	States
 	{
 	Spawn:

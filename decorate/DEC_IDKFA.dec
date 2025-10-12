@@ -1,0 +1,29 @@
+Actor IDKFA_ChooseGame : CheatGiverBase
+{
+	States
+	{
+	Pickup:
+		TNT1 A 1 A_JumpIfInventory("FWeapFist_Toby", 1, "GiveFighter_Toby")
+		TNT1 A 1 A_JumpIfInventory("CWeapMace_Toby", 1, "GiveCleric_Toby")
+		TNT1 A 1 A_JumpIfInventory("MWeapWand_Toby", 1, "GiveMage_Toby")
+		Stop
+	GiveFighter_Toby:
+		TNT1 A 1 A_GiveInventory("MeshArmor")
+		TNT1 A 1 A_GiveInventory("FWeapAxe_Toby")
+		TNT1 A 1 A_GiveInventory("FWeapHammer_Toby")
+		TNT1 A 1 A_GiveInventory("FWeapQuietus_Toby")
+		Stop
+	GiveCleric_Toby:
+		TNT1 A 1 A_GiveInventory("FalconShield")
+		TNT1 A 1 A_GiveInventory("CWeapStaff_Toby")
+		TNT1 A 1 A_GiveInventory("CWeapFlame_Toby")
+		TNT1 A 1 A_GiveInventory("CWeapWraithverge_Toby")
+		Stop
+	GiveMage_Toby:
+		TNT1 A 1 A_GiveInventory("AmuletOfWarding")
+		TNT1 A 1 A_GiveInventory("MWeapFrost_Toby")
+		TNT1 A 1 A_GiveInventory("MWeapLightning_Toby")
+		TNT1 A 1 A_GiveInventory("MWeapBloodscourge_Toby")
+		Stop
+	}
+}
