@@ -7,6 +7,7 @@ ACTOR Mana1_Toby : CustomInventory replaces Mana1
 	+FLOATBOB
     Inventory.PickupMessage "$TXT_MANA_1"
     Inventory.PickupSound "ammo/pickup/mana1"
+	Tag "Blue Mana"
     States
     {
     Spawn:
@@ -34,6 +35,7 @@ ACTOR Mana2_Toby : CustomInventory replaces Mana2
 	+FLOATBOB
     Inventory.PickupMessage "$TXT_MANA_2"
     Inventory.PickupSound "ammo/pickup/mana2"
+	Tag "Green Mana"
     States
     {
     Spawn:
@@ -61,6 +63,7 @@ ACTOR Mana3_Toby : CustomInventory replaces Mana3
 	+FLOATBOB
 	Inventory.PickupMessage "$TXT_MANA_BOTH"
 	Inventory.PickupSound "ammo/pickup/mana3"
+	Tag "Combined Mana"
 	States
 	{
 	Spawn:

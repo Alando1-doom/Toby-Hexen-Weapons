@@ -7,6 +7,7 @@ ACTOR BloodscourgeP1_Toby : CustomInventory replaces MWeaponPiece1
 	+FANCYPICKUPSOUND
 	Inventory.PickupMessage "$TXT_BLOODSCOURGE_PIECE"
 	Inventory.PickupSound "weapons/bloodscourge/piece"
+	Tag "Bloodscourge Piece 1"
 	States
 	{
 	Spawn:
@@ -34,6 +35,7 @@ ACTOR BloodscourgeP2_Toby : CustomInventory replaces MWeaponPiece2
 	+FANCYPICKUPSOUND
 	Inventory.PickupMessage "$TXT_BLOODSCOURGE_PIECE"
 	Inventory.PickupSound "weapons/bloodscourge/piece"
+	Tag "Bloodscourge Piece 2"
 	States
 	{
 	Spawn:
@@ -61,6 +63,7 @@ ACTOR BloodscourgeP3_Toby : CustomInventory replaces MWeaponPiece3
 	+FANCYPICKUPSOUND
 	Inventory.PickupMessage "$TXT_BLOODSCOURGE_PIECE"
 	Inventory.PickupSound "weapons/bloodscourge/piece"
+	Tag "Bloodscourge Piece 3"
 	States
 	{
 	Spawn:
@@ -150,6 +153,7 @@ ACTOR MWeapBloodscourge_Giver : CustomInventory 12347
    Inventory.PickupMessage "$TXT_WEAPON_M4"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Bloodscourge"
     States
     {
     Spawn:

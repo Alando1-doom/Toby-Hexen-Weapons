@@ -3,4 +3,18 @@ ACTOR CStaffMissile_Toby : CStaffMissile replaces CStaffMissile
 	+THRUGHOST
 	+DONTREFLECT
 	Decal BaronScorch
+	States
+	{
+	Spawn:
+		CSSF D 1 Bright A_PlaySoundEx("projectiles/serpent", "Auto", 1, 0)
+		CSSF D 0 Bright A_CStaffMissileSlither
+		CSSF DEE 1 Bright A_CStaffMissileSlither
+		Loop
+	Death:
+		CSSF F 1 Bright A_StopSound
+		CSSF F 3 Bright A_PlaySoundEx("ClericCStaffExplode", "Auto", 0, 0)
+		CSSF G 4 Bright
+		CSSF HI 3 Bright
+		Stop
+	}
 }

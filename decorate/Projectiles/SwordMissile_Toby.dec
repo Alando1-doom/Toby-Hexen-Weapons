@@ -3,4 +3,22 @@ ACTOR FSwordMissile_Toby : FSwordMissile replaces FSwordMissile
 	+THRUGHOST
 	+DONTREFLECT
 	Decal SwordLightning
+	States
+	{
+	Spawn:
+		FSFX A 3 Bright A_PlaySoundEx("projectiles/sword", "Auto", 1, 0)
+		FSFX BC 3 Bright
+		Loop
+	Death:
+		FSFX D 1 Bright A_StopSound
+		FSFX D 3 Bright A_PlaySoundEx("FighterSwordExplode", "Auto", 0, 0)
+		FSFX E 3 Bright A_FSwordFlames
+		FSFX F 4 Bright A_Explode (64, 128, 0)
+		FSFX G 3 Bright
+		FSFX H 4 Bright
+		FSFX I 3 Bright
+		FSFX J 4 Bright
+		FSFX KLM 3 Bright
+		Stop
+	}
 }

@@ -22,6 +22,7 @@ ACTOR MWeapLightning_Giver : CustomInventory replaces MWeapLightning
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
 	+FLOATBOB
+	Tag "Arc of Death"
     States
     {
     Spawn:

@@ -20,6 +20,7 @@ ACTOR FWeapHammer_Giver : CustomInventory replaces FWeapHammer
     Inventory.PickupMessage "$TXT_WEAPON_F3"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Hammer of Retribution"
     States
     {
     Spawn:
