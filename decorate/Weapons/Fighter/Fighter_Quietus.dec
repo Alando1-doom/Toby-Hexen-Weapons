@@ -7,6 +7,7 @@ ACTOR QuietusP1_Toby : CustomInventory replaces FWeaponPiece1
 	+FANCYPICKUPSOUND
 	Inventory.PickupMessage "$TXT_QUIETUS_PIECE"
 	Inventory.PickupSound "weapons/quietus/piece"
+	Tag "Quietus Piece 1"
 	States
 	{
 	Spawn:
@@ -34,6 +35,7 @@ ACTOR QuietusP2_Toby : CustomInventory replaces FWeaponPiece2
 	+FANCYPICKUPSOUND
 	Inventory.PickupMessage "$TXT_QUIETUS_PIECE"
 	Inventory.PickupSound "weapons/quietus/piece"
+	Tag "Quietus Piece 2"
 	States
 	{
 	Spawn:
@@ -61,6 +63,7 @@ ACTOR QuietusP3_Toby : CustomInventory replaces FWeaponPiece3
 	+FANCYPICKUPSOUND
 	Inventory.PickupMessage "$TXT_QUIETUS_PIECE"
 	Inventory.PickupSound "weapons/quietus/piece"
+	Tag "Quietus Piece 3"
 	States
 	{
 	Spawn:
@@ -149,6 +152,7 @@ ACTOR FWeapQuietus_Giver : CustomInventory 12345
    Inventory.PickupMessage "$TXT_WEAPON_F4"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Quietus"
     States
     {
     Spawn:

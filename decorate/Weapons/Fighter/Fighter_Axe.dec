@@ -20,6 +20,7 @@ ACTOR FWeapAxe_Giver : CustomInventory replaces FWeapAxe
     Inventory.PickupMessage "$TXT_WEAPON_F2"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Timon's Axe"
     States
     {
     Spawn:

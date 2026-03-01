@@ -2,4 +2,20 @@ ACTOR MageStaffFX2_Toby : MageStaffFX2 replaces MageStaffFX2
 {
 	+THRUGHOST
 	+DONTREFLECT
+	States
+	{
+	Spawn:
+		MSP2 A 2 Bright A_PlaySoundEx("projectiles/scourge", "Auto", 1, 0)
+		MSP2 A 0 Bright A_MStaffTrack
+		MSP2 BCD 2 Bright A_MStaffTrack
+		Loop
+	Death:
+		MSP2 E 1 Bright A_StopSound
+		MSP2 E 2 Bright A_SetTranslucent(1,1)
+		MSP2 E 1 Bright A_PlaySoundEx("MageStaffExplode", "Auto", 0, 0)
+		MSP2 F 5 Bright A_Explode (80, 192, 0)
+		MSP2 GH 5 Bright
+		MSP2 I 4 Bright
+		Stop
+	}
 }

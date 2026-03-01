@@ -3,4 +3,40 @@ ACTOR FrostMissile_Toby : FrostMissile replaces FrostMissile
 	+THRUGHOST
 	+DONTREFLECT
 	Decal RailScorch
+	States
+	{
+	Spawn:
+		SHRD A 2 Bright A_PlaySoundEx("projectiles/ice", "Auto", 1, 0)
+		SHRD A 3 Bright A_ShedShard
+		SHRD B 3 Bright
+		SHRD C 3 Bright
+		Loop
+	Death:
+		SHEX A 1 Bright A_StopSound
+		SHEX A 4 Bright A_PlaySoundEx("MageShardsExplode", "Auto", 0, 0)
+		SHEX BCDE 5 Bright
+		Stop
+	}
+}
+
+
+ACTOR IceShard_Toby : FrostMissile replaces IceShard
+{
+	Game Hexen
+	SpawnID 65
+	DamageType "Ice"
+	-ACTIVATEIMPACT
+	-ACTIVATEPCROSS
+	States
+	{
+	Spawn:
+		SHRD A 3 A_PlaySoundEx("projectiles/ice", "Auto", 1, 0)
+		SHRD BC 3 Bright
+		Loop
+	Death:
+		SHEX A 1 Bright A_StopSound
+		SHEX A 4 Bright A_PlaySoundEx("MageShardsExplode", "Auto", 0, 0)
+		SHEX BCDE 5 Bright
+		Stop
+	}
 }

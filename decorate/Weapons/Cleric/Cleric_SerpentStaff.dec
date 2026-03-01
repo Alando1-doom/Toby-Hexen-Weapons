@@ -20,6 +20,7 @@ ACTOR CWeapStaff_Giver : CustomInventory replaces CWeapStaff
     Inventory.PickupMessage "$TXT_WEAPON_C2"
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
+	Tag "Serpent Staff"
     States
     {
     Spawn:

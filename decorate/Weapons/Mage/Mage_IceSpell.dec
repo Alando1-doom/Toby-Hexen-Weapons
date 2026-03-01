@@ -23,6 +23,7 @@ ACTOR MWeapFrost_Giver : CustomInventory replaces MWeapFrost
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
 	+FLOATBOB
+	Tag "Frost Spell"
     States
     {
     Spawn:

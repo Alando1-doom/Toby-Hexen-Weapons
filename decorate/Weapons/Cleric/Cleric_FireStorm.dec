@@ -22,6 +22,7 @@ ACTOR CWeapFlame_Giver : CustomInventory replaces CWeapFlame
 	Inventory.RespawnTics 105
 	Inventory.PickupSound ""
 	+FLOATBOB
+	Tag "Firestorm"
     States
     {
     Spawn:
